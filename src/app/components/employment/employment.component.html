@@ -1,0 +1,28 @@
+<p>employment works!</p>
+<div>
+    <ul>
+        <li *ngFor="let job of jobs">
+            <p>Id: {{job.id}}</p>
+            <p (click)="JobClicked(job)">job_title: {{job.job_title}}</p>
+            <p>Description: {{job.description}}</p>
+            <p>date_posted: {{job.date_posted}}</p>
+            <P>Category: {{job.category}}</P>
+            <P>location: {{job.location}}</P>
+            <p>approximate_salary: {{job.approximate_salary}}</p>
+            <P>deadline: {{job.deadline}}</P>
+            <P>user: {{job.user}}</P>
+        </li>
+    </ul>
+</div>
+<hr>
+job_title: <input type="text" [(ngModel)]="selectedJob.job_title"/><br>
+Description: <input type="text" [(ngModel)]="selectedJob.description"/><br>
+date_posted: <input type="date" [(ngModel)]="selectedJob.date_posted"/><br>
+Category: <input type="text" [(ngModel)]="selectedJob.category"/><br>
+location: <input type="text" [(ngModel)]="selectedJob.location"/><br>
+approximate_salary: <input type="number" [(ngModel)]="selectedJob.approximate_salary"/><br>
+deadline: <input type="date" [(ngModel)]="selectedJob.deadline"/><br>
+<button *ngIf="selectedJob.id != -1" (click)="putJob()"> PUT </button>
+<button *ngIf="selectedJob.id == -1" (click)="newJob()"> POST </button>
+<button *ngIf="selectedJob.id != -1" (click)="deleteJob()"> DELETE </button>
+

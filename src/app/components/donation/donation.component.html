@@ -1,0 +1,24 @@
+<p>donation works!</p>
+<div>
+    <ul>
+        <li *ngFor="let donation of donations">
+            <p>id: {{donation.id}}</p>
+            <p (click)="donationsClicked(donation)">Item: {{donation.items}}</p>
+            <p>donorname: {{donation.donorname}}</p>
+            <p>location: {{donation.location}}</p>
+            <P>time: {{donation.time}}</P>
+            <P>donationdate: {{donation.donationdate}}</P>
+            <P>user: {{donation.user}}</P>
+        </li>
+    </ul>
+</div>
+<hr>
+items: <input type="text" [(ngModel)]="selectedDonation.items"/><br>
+donorname: <input type="text" [(ngModel)]="selectedDonation.donorname"/><br>
+location: <input type="text" [(ngModel)]="selectedDonation.location"/><br>
+Event date: <input type="date" [(ngModel)]="selectedDonation.donationdate"/><br>
+Event time: <input type="time" [(ngModel)]="selectedDonation.time"/><br>
+<button *ngIf="selectedDonation.id != -1" (click)="putDonation()"> PUT </button>
+<button *ngIf="selectedDonation.id == -1" (click)="newDonation()"> POST </button>
+<button *ngIf="selectedDonation.id != -1" (click)="deleteDonation()"> DELETE </button>
+

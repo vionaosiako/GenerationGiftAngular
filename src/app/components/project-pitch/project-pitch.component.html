@@ -1,0 +1,22 @@
+<p>project-pitch works!</p>
+
+<div>
+    <ul>
+        <li *ngFor="let pitch of projectPitches">
+            <p>Id: {{ pitch.id }}</p>
+            <p (click)="PitchesClicked(pitch)">Title: {{ pitch.title }} </p>
+            <p>Des: {{ pitch.description }}</p>
+            <p>No: {{ pitch.mpesa_no }}</p>
+            <p>Cost: {{ pitch.total_cost }}</p>
+        </li>
+    </ul>
+</div>
+<hr>
+
+Title: <input type="text" [(ngModel)]="selectedPitch.title"/><br>
+description: <input type="text" [(ngModel)]="selectedPitch.description"/><br>
+mpesa_no: <input type="text" [(ngModel)]="selectedPitch.mpesa_no"/><br>
+total_cost: <input type="number" [(ngModel)]="selectedPitch.total_cost"/><br>
+<button *ngIf="selectedPitch.id != -1" (click)="putPitch()"> PUT </button>
+<button *ngIf="selectedPitch.id == -1" (click)="newPitch()"> POST </button>
+<button *ngIf="selectedPitch.id != -1" (click)="deletePitch()"> DELETE </button>

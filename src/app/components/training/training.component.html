@@ -1,0 +1,27 @@
+<p>training works!</p>
+
+<div>
+    <ul>
+        <li *ngFor="let training of trainings">
+            <p>Id: {{training.id}}</p>
+            Poster: <img src="{{training.poster}}" alt="image">
+            <p (click)="trainingClicked(training)">Title: {{training.title}}</p>
+            <p>Description: {{training.description}}</p>
+            <p>Venue: {{training.venue}}</p>
+            <P>Category: {{training.category}}</P>
+            <P>Event date: {{training.eventdate}}</P>
+        </li>
+    </ul>
+</div>
+<hr>
+Poster: <input type="file" [(ngModel)]="selectedTraining.poster"/><br>
+Title: <input type="text" [(ngModel)]="selectedTraining.title"/><br>
+Description: <input type="text" [(ngModel)]="selectedTraining.description"/><br>
+Venue: <input type="text" [(ngModel)]="selectedTraining.venue"/><br>
+Category: <input type="text" [(ngModel)]="selectedTraining.category"/><br>
+Event date: <input type="date" [(ngModel)]="selectedTraining.eventdate"/><br>
+Event time: <input type="time" [(ngModel)]="selectedTraining.eventtime"/><br>
+<button *ngIf="selectedTraining.id != -1" (click)="putTraining()"> PUT </button>
+<button *ngIf="selectedTraining.id == -1" (click)="newTraining()"> POST </button>
+<button *ngIf="selectedTraining.id != -1" (click)="deleteTraining()"> DELETE </button>
+
