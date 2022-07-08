@@ -1,3 +1,72 @@
+<div id="pitch">
+    <div class="container-fluid">
+        <h2> Project Pitch</h2>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pitchModal">
+            Add Pitch
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="pitchModal" tabindex="-1" aria-labelledby="pitchModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title text-center" id="pitchModalLabel"> Add Donations</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="pitchFormControlInput1" class="form-label fs-4">Title</label>
+                            <input type="text" class="form-control" [(ngModel)]="selectedPitch.title" id="pitchFormControlInput1" placeholder="title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pitchFormControlTextarea1" class="form-label fs-4">Description</label>
+                            <textarea class="form-control" [(ngModel)]="selectedPitch.description" id="pitchFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pitchFormControlInput1" class="form-label fs-4">Mpesa Number</label>
+                            <input type="number" class="form-control" [(ngModel)]="selectedPitch.mpesa_no" id="pitchFormControlInput1" placeholder="+254">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pitchFormControlInput1" class="form-label fs-4">Total Cost</label>
+                            <input type="number" class="form-control" [(ngModel)]="selectedPitch.total_cost" id="pitchFormControlInput1" placeholder="Total Cost">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" *ngIf="selectedPitch.id == -1" (click)="newPitch()"> POST </button>
+                        <button type="button" class="btn btn-primary" *ngIf="selectedPitch.id != -1" (click)="deletePitch()"> DELETE </button>
+                        <button type="button" class="btn btn-primary" *ngIf="selectedPitch.id != -1" (click)="putPitch()"> PUT </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="container-fluid">
+        <div class="row" style="display: flex; justify-content: center;">
+            <div class="col-md-4">
+                <div class="card bg-white">
+                    <div class="card-body">
+                        <ul>
+                            <li *ngFor="let pitch of projectPitches">
+                                <p>Id: {{ pitch.id }}</p>
+                                <p (click)="PitchesClicked(pitch)">Title: {{ pitch.title }} </p>
+                                <p>Des: {{ pitch.description }}</p>
+                                <p>No: {{ pitch.mpesa_no }}</p>
+                                <p>Cost: {{ pitch.total_cost }}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+
 <p>project-pitch works!</p>
 
 <div>
