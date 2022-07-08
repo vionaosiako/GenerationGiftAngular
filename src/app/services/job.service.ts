@@ -6,7 +6,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class JobService {
-  baseurl = 'http://127.0.0.1:8000/job';
+  baseurl = 'https://generationgift.herokuapp.com/job';
   httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private http:HttpClient) { }

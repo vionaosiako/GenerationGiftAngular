@@ -1,4 +1,92 @@
-<p>training works!</p>
+<div id="training">
+    <div class="container-fluid">
+        <h2> Trainings</h2>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#trainingModal">
+            Add Training
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="trainingModal" tabindex="-1" aria-labelledby="trainingModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title text-center" id="trainingModalLabel"> Add Donations</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="trainingFormControlInput1" class="form-label fs-4">Poster</label>
+                            <input type="file" [(ngModel)]="selectedTraining.poster" class="form-control" id="trainingFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="trainingFormControlInput1" class="form-label fs-4">Title</label>
+                            <input type="text" [(ngModel)]="selectedTraining.title" class="form-control" id="trainingFormControlInput1"
+                                placeholder="Title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="trainingFormControlInput1" class="form-label fs-4">description</label>
+                            <input class="form-control" [(ngModel)]="selectedTraining.description" id="trainingFormControlTextarea1" rows="3"
+                                placeholder="description">
+                        </div>
+                        <div class="mb-3">
+                            <label for="trainingFormControlInput1" class="form-label fs-4">Location</label>
+                            <input type="text" class="form-control" [(ngModel)]="selectedTraining.venue" id="trainingFormControlInput1"
+                                placeholder="Location">
+                        </div>
+                        <div class="mb-3">
+                            <label for="trainingFormControlInput1" class="form-label fs-4">Category</label>
+                            <input type="text" class="form-control" [(ngModel)]="selectedTraining.category" id="trainingFormControlInput1"
+                                placeholder="Category">
+                        </div>
+                        <div class="mb-3">
+                            <label for="trainingFormControlInput1" class="form-label fs-4">Donation Date</label>
+                            <input type="date" class="form-control" [(ngModel)]="selectedTraining.eventdate" id="trainingFormControlInput1"
+                                placeholder="Donation Date">
+                        </div>
+                        <div class="mb-3">
+                            <label for="trainingFormControlInput1" class="form-label fs-4">Time</label>
+                            <input type="time" class="form-control" [(ngModel)]="selectedTraining.eventtime" id="trainingFormControlInput1" placeholder="Time">
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" *ngIf="selectedTraining.id == -1" (click)="newTraining()"> POST </button>
+                        <button type="button" class="btn btn-primary" *ngIf="selectedTraining.id != -1" (click)="deleteTraining()"> DELETE </button>
+                        <button type="button" class="btn btn-primary" *ngIf="selectedTraining.id != -1" (click)="putTraining()"> PUT </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="container-fluid">
+        <div class="row" style="display: flex; justify-content: center;">
+            <div class="col-md-4">
+                <div class="card bg-white">
+                    <div class="card-body">
+                        <ul>
+                            <li *ngFor="let training of trainings">
+                                <img src="{{image_url+training.poster}}" alt="image" class="trainingImage">
+                                <p (click)="trainingClicked(training)">Title: {{training.title}}</p>
+                                <p>Description: {{training.description}}</p>
+                                <p>Venue: {{training.venue}}</p>
+                                <P>Category: {{training.category}}</P>
+                                <P>Event date: {{training.eventdate}}</P>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+<!-- <p>training works!</p>
 
 <div>
     <ul>
@@ -14,7 +102,7 @@
     </ul>
 </div>
 <hr>
-<!-- Poster: <input type="file" [(ngModel)]="selectedTraining.poster"/><br> -->
+Poster: <input type="file" [(ngModel)]="selectedTraining.poster"/><br>
 Title: <input type="text" [(ngModel)]="selectedTraining.title"/><br>
 Description: <input type="text" [(ngModel)]="selectedTraining.description"/><br>
 Venue: <input type="text" [(ngModel)]="selectedTraining.venue"/><br>
@@ -24,4 +112,4 @@ Event time: <input type="time" [(ngModel)]="selectedTraining.eventtime"/><br>
 <button *ngIf="selectedTraining.id != -1" (click)="putTraining()"> PUT </button>
 <button *ngIf="selectedTraining.id == -1" (click)="newTraining()"> POST </button>
 <button *ngIf="selectedTraining.id != -1" (click)="deleteTraining()"> DELETE </button>
-
+-->

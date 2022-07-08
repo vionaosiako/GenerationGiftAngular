@@ -6,7 +6,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProjectpitchService {
-  baseurl = 'http://127.0.0.1:8000/pitch';
+  baseurl = 'https://generationgift.herokuapp.com/pitch';
   httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private http:HttpClient) { }
