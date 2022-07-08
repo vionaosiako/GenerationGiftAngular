@@ -11,6 +11,7 @@ import { ProjectPitchComponent } from './components/project-pitch/project-pitch.
 import { EmploymentComponent } from './components/employment/employment.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     EmploymentComponent,
     AboutusComponent,
     NavbarComponent,
+    BannerComponent,
 
 
   ],
