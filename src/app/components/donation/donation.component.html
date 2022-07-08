@@ -1,24 +1,75 @@
-<p>donation works!</p>
-<div>
-    <ul>
-        <li *ngFor="let donation of donations">
-            <p>id: {{donation.id}}</p>
-            <p (click)="donationsClicked(donation)">Item: {{donation.items}}</p>
-            <p>donorname: {{donation.donorname}}</p>
-            <p>location: {{donation.location}}</p>
-            <P>time: {{donation.time}}</P>
-            <P>donationdate: {{donation.donationdate}}</P>
-            <P>user: {{donation.user}}</P>
-        </li>
-    </ul>
+<div id="donation">
+    <div class="container-fluid">
+        <h2> Donations</h2>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Donate Now
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title text-center" id="exampleModalLabel"> Add Donations</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label fs-4">Donor Name</label>
+                            <input type="text" [(ngModel)]="selectedDonation.donorname" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Donor Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label fs-4">Items</label>
+                            <textarea class="form-control" [(ngModel)]="selectedDonation.items" id="exampleFormControlTextarea1" rows="3"
+                                placeholder="Items"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label fs-4">Location</label>
+                            <input type="text" class="form-control" [(ngModel)]="selectedDonation.location" id="exampleFormControlInput1"
+                                placeholder="Location">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label fs-4">Time</label>
+                            <input type="time" class="form-control" [(ngModel)]="selectedDonation.time" id="exampleFormControlInput1" placeholder="Time">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label fs-4">Donation Date</label>
+                            <input type="date" class="form-control" [(ngModel)]="selectedDonation.donationdate" id="exampleFormControlInput1"
+                                placeholder="Donation Date">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-primary" *ngIf="selectedDonation.id == -1" (click)="newDonation()"> POST </button>
+                        <button type="button" class="btn btn-primary" *ngIf="selectedDonation.id != -1" (click)="deleteDonation()"> DELETE </button>
+                        <button type="button" class="btn btn-primary" *ngIf="selectedDonation.id != -1" (click)="putDonation()"> PUT </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="container-fluid">
+        <div class="row" style="display: flex; justify-content: center;">
+            <div class="col-md-4">
+                <div class="card bg-white">
+                    <div class="card-body">
+                        <ul>
+                            <li *ngFor="let donation of donations">
+                                <p>id: {{donation.id}}</p>
+                                <p (click)="donationsClicked(donation)">Item: {{donation.items}}</p>
+                                <p>donorname: {{donation.donorname}}</p>
+                                <p>location: {{donation.location}}</p>
+                                <P>time: {{donation.time}}</P>
+                                <P>donationdate: {{donation.donationdate}}</P>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </div>
-<hr>
-items: <input type="text" [(ngModel)]="selectedDonation.items"/><br>
-donorname: <input type="text" [(ngModel)]="selectedDonation.donorname"/><br>
-location: <input type="text" [(ngModel)]="selectedDonation.location"/><br>
-Event date: <input type="date" [(ngModel)]="selectedDonation.donationdate"/><br>
-Event time: <input type="time" [(ngModel)]="selectedDonation.time"/><br>
-<button *ngIf="selectedDonation.id != -1" (click)="putDonation()"> PUT </button>
-<button *ngIf="selectedDonation.id == -1" (click)="newDonation()"> POST </button>
-<button *ngIf="selectedDonation.id != -1" (click)="deleteDonation()"> DELETE </button>
-
