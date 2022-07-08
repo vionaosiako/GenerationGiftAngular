@@ -4,7 +4,7 @@
     <ul>
         <li *ngFor="let training of trainings">
             <p>Id: {{training.id}}</p>
-            Poster: <img src="{{training.poster}}" alt="image">
+            Poster: <img src="{{image_url+training.poster}}" alt="image">
             <p (click)="trainingClicked(training)">Title: {{training.title}}</p>
             <p>Description: {{training.description}}</p>
             <p>Venue: {{training.venue}}</p>
@@ -14,7 +14,7 @@
     </ul>
 </div>
 <hr>
-Poster: <input type="file" [(ngModel)]="selectedTraining.poster"/><br>
+<!-- Poster: <input type="file" [(ngModel)]="selectedTraining.poster"/><br> -->
 Title: <input type="text" [(ngModel)]="selectedTraining.title"/><br>
 Description: <input type="text" [(ngModel)]="selectedTraining.description"/><br>
 Venue: <input type="text" [(ngModel)]="selectedTraining.venue"/><br>

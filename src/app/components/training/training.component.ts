@@ -10,6 +10,7 @@ import { TrainingService } from 'src/app/services/training.service';
 })
 
 export class TrainingComponent implements OnInit {
+  image_url= "https://res.cloudinary.com/dhvcmzuzw/"
   selectedTraining;
   trainings=[{id:1}, {title:'test'}, {poster:'poster'},{description:'description'},{venue:'venue'},{category:'category'},{eventdate:'eventdate'},{eventtime:'eventtime'},{user:'user'}];
   

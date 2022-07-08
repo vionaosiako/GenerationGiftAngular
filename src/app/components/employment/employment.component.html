@@ -15,13 +15,23 @@
     </ul>
 </div>
 <hr>
-job_title: <input type="text" [(ngModel)]="selectedJob.job_title"/><br>
+<!-- job_title: <input type="text" [(ngModel)]="selectedJob.job_title"/><br>
 Description: <input type="text" [(ngModel)]="selectedJob.description"/><br>
 date_posted: <input type="date" [(ngModel)]="selectedJob.date_posted"/><br>
 Category: <input type="text" [(ngModel)]="selectedJob.category"/><br>
 location: <input type="text" [(ngModel)]="selectedJob.location"/><br>
 approximate_salary: <input type="number" [(ngModel)]="selectedJob.approximate_salary"/><br>
 deadline: <input type="date" [(ngModel)]="selectedJob.deadline"/><br>
+<button *ngIf="selectedJob.id != -1" (click)="putJob()"> PUT </button>
+<button *ngIf="selectedJob.id == -1" (click)="newJob()"> POST </button>
+<button *ngIf="selectedJob.id != -1" (click)="deleteJob()"> DELETE </button> -->
+
+
+job_title: <input type="text" [(ngModel)]="selectedJob.job_title"/><br>
+Description: <input type="text" [(ngModel)]="selectedJob.description"/><br>
+location: <input type="text" [(ngModel)]="selectedJob.location"/><br>
+Category: <input type="text" [(ngModel)]="selectedJob.category"/><br>
+date_posted: <input type="date" [(ngModel)]="selectedJob.date_posted"/><br>
 <button *ngIf="selectedJob.id != -1" (click)="putJob()"> PUT </button>
 <button *ngIf="selectedJob.id == -1" (click)="newJob()"> POST </button>
 <button *ngIf="selectedJob.id != -1" (click)="deleteJob()"> DELETE </button>

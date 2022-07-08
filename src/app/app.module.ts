@@ -9,6 +9,9 @@ import { TrainingComponent } from './components/training/training.component';
 import { DonationComponent } from './components/donation/donation.component';
 import { ProjectPitchComponent } from './components/project-pitch/project-pitch.component';
 import { EmploymentComponent } from './components/employment/employment.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { EmploymentComponent } from './components/employment/employment.componen
     DonationComponent,
     ProjectPitchComponent,
     EmploymentComponent,
+    AboutusComponent,
+    NavbarComponent,
+
 
   ],
   imports: [
