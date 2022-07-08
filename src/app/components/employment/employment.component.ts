@@ -41,20 +41,17 @@ export class EmploymentComponent implements OnInit {
     );
   };
 
-  JobClicked = (job:any) => {
+  jobClicked = (job:any) => {
     this.api.getOneJob(job.id).subscribe(
       data => {
-        alert(data)
         this.selectedJob = data;
       },
       error => {
         console.log(error);
-        // alert('error')
       }
     );
-    // console.log(job.id)
+    // console.log(training.id)
   }
-
   putJob = () => {
     this.api.updateJob(this.selectedJob).subscribe(
       data => {

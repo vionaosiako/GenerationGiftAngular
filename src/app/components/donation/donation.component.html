@@ -40,7 +40,6 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Submit</button>
                         <button type="button" class="btn btn-primary" *ngIf="selectedDonation.id == -1" (click)="newDonation()"> POST </button>
                         <button type="button" class="btn btn-primary" *ngIf="selectedDonation.id != -1" (click)="deleteDonation()"> DELETE </button>
                         <button type="button" class="btn btn-primary" *ngIf="selectedDonation.id != -1" (click)="putDonation()"> PUT </button>

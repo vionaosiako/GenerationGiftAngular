@@ -1,9 +1,88 @@
-<p>employment works!</p>
+<div id="job">
+    <div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#jobModal">
+            Post Job
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="jobModal" tabindex="-1" aria-labelledby="jobModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="jobModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="jobFormControlInput1" class="form-label fs-4">Job Title</label>
+                            <input type="text" class="form-control" [(ngModel)]="selectedJob.job_title" id="jobFormControlInput1"
+                            placeholder="title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="jobFormControlTextarea1" class="form-label fs-4">Description</label>
+                            <textarea class="form-control" [(ngModel)]="selectedJob.description" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jobFormControlInput1" class="form-label fs-4"><i
+                                class="baseline-date_range">Category</i></label>
+                            <input type="text" class="form-control" [(ngModel)]="selectedJob.category" placeholder="category">
+                        </div>
+                        <div class="mb-3">
+                            <label for="jobFormControlInput1" class="form-label fs-4">Location</label>
+                            <input type="text" class="form-control" [(ngModel)]="selectedJob.location" placeholder="job location">
+                        </div>
+                        <div class="mb-3">
+                            <label for="jobFormControlInput1" class="form-label fs-4">Salary </label>
+                            <input type="number" class="form-control" [(ngModel)]="selectedJob.approximate_salary" placeholder="Ksh">
+                        </div>
+                        <div class="mb-3">
+                            <label for="jobFormControlInput1" class="form-label fs-4">Date</label>
+                            <input type="date" class="form-control" [(ngModel)]="selectedJob.date_posted" placeholder="Due date">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" *ngIf="selectedJob.id == -1" (click)="newJob()"> POST </button>
+                        <button type="button" class="btn btn-primary" *ngIf="selectedJob.id != -1" (click)="deleteJob()"> DELETE </button>
+                        <button type="button" class="btn btn-primary" *ngIf="selectedJob.id != -1" (click)="putJob()"> PUT </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row" style="display: flex; justify-content: center;">
+            <div class="col-md-4">
+                <div class="card bg-white">
+                    <div class="card-body">
+                        <ul>
+                            <li *ngFor="let job of jobs">
+                                <p>Id: {{job.id}}</p>
+                                <p (click)="jobClicked(job)">job_title: {{job.job_title}}</p>
+                                <p>Description: {{job.description}}</p>
+                                <p>date_posted: {{job.date_posted}}</p>
+                                <P>Category: {{job.category}}</P>
+                                <P>location: {{job.location}}</P>
+                                <p>approximate_salary: {{job.approximate_salary}}</p>
+                                <P>deadline: {{job.deadline}}</P>
+                                <P>user: {{job.user}}</P>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <p>employment works!</p>
 <div>
     <ul>
         <li *ngFor="let job of jobs">
             <p>Id: {{job.id}}</p>
-            <p (click)="JobClicked(job)">job_title: {{job.job_title}}</p>
+            <p (click)="jobClicked(job)">job_title: {{job.job_title}}</p>
             <p>Description: {{job.description}}</p>
             <p>date_posted: {{job.date_posted}}</p>
             <P>Category: {{job.category}}</P>
@@ -15,16 +94,6 @@
     </ul>
 </div>
 <hr>
-<!-- job_title: <input type="text" [(ngModel)]="selectedJob.job_title"/><br>
-Description: <input type="text" [(ngModel)]="selectedJob.description"/><br>
-date_posted: <input type="date" [(ngModel)]="selectedJob.date_posted"/><br>
-Category: <input type="text" [(ngModel)]="selectedJob.category"/><br>
-location: <input type="text" [(ngModel)]="selectedJob.location"/><br>
-approximate_salary: <input type="number" [(ngModel)]="selectedJob.approximate_salary"/><br>
-deadline: <input type="date" [(ngModel)]="selectedJob.deadline"/><br>
-<button *ngIf="selectedJob.id != -1" (click)="putJob()"> PUT </button>
-<button *ngIf="selectedJob.id == -1" (click)="newJob()"> POST </button>
-<button *ngIf="selectedJob.id != -1" (click)="deleteJob()"> DELETE </button> -->
 
 
 job_title: <input type="text" [(ngModel)]="selectedJob.job_title"/><br>
@@ -35,4 +104,4 @@ date_posted: <input type="date" [(ngModel)]="selectedJob.date_posted"/><br>
 <button *ngIf="selectedJob.id != -1" (click)="putJob()"> PUT </button>
 <button *ngIf="selectedJob.id == -1" (click)="newJob()"> POST </button>
 <button *ngIf="selectedJob.id != -1" (click)="deleteJob()"> DELETE </button>
-
+-->
