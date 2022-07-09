@@ -62,11 +62,11 @@
     <br><br>
     <div class="container-fluid">
         <div class="row" style="display: flex; justify-content: center;">
-            <div class="col-md-4">
+            <div class="col-md-4" *ngFor="let training of trainings">
                 <div class="card bg-white">
                     <div class="card-body">
                         <ul>
-                            <li *ngFor="let training of trainings">
+                            <li>
                                 <img src="{{image_url+training.poster}}" alt="image" class="trainingImage">
                                 <p (click)="trainingClicked(training)">Title: {{training.title}}</p>
                                 <p>Description: {{training.description}}</p>

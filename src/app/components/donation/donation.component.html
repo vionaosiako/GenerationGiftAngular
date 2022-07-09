@@ -52,11 +52,11 @@
     <br><br>
     <div class="container-fluid">
         <div class="row" style="display: flex; justify-content: center;">
-            <div class="col-md-4">
+            <div class="col-md-4 mt-2" *ngFor="let donation of donations">
                 <div class="card bg-white">
                     <div class="card-body">
                         <ul>
-                            <li *ngFor="let donation of donations">
+                            <li>
                                 <p>id: {{donation.id}}</p>
                                 <p (click)="donationsClicked(donation)">Item: {{donation.items}}</p>
                                 <p>donorname: {{donation.donorname}}</p>

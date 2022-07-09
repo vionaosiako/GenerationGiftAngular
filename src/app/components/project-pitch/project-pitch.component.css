@@ -1,3 +1,6 @@
 #pitch{
     background-color: #057088;
 }
+.intro{
+    display: flex;
+}

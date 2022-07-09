@@ -1,16 +1,28 @@
 <div id="pitch">
     <div class="container-fluid">
-        <h2> Project Pitch</h2>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pitchModal">
-            Add Pitch
-        </button>
+        <h1 class="text-center text-white"> Project Pitch</h1>
+        <div class="intro container">
+            <div class="col-md-2"></div>
+            <div class="col-md-6">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quisquam commodi optio dolor iusto culpa eius placeat nostrum. Quod perferendis libero amet saepe porro aliquam praesentium, iure quisquam. Amet, quod?</p>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pitchModal">
+                Add Pitch
+                </button>
+            </div>
+            <div class="col-md-1"></div>
+            
+        </div>
+        
         <!-- Modal -->
         <div class="modal fade" id="pitchModal" tabindex="-1" aria-labelledby="pitchModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title text-center" id="pitchModalLabel"> Add Donations</h2>
+                        <h2 class="modal-title text-center" id="pitchModalLabel"> Add project pitch</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -44,11 +56,11 @@
     <br><br>
     <div class="container-fluid">
         <div class="row" style="display: flex; justify-content: center;">
-            <div class="col-md-4">
+            <div class="col-md-4" *ngFor="let pitch of projectPitches">
                 <div class="card bg-white">
                     <div class="card-body">
                         <ul>
-                            <li *ngFor="let pitch of projectPitches">
+                            <li>
                                 <p>Id: {{ pitch.id }}</p>
                                 <p (click)="PitchesClicked(pitch)">Title: {{ pitch.title }} </p>
                                 <p>Des: {{ pitch.description }}</p>
