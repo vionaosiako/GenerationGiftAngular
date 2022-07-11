@@ -1,16 +1,31 @@
 <div id="training">
     <div class="container-fluid">
-        <h2> Trainings</h2>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#trainingModal">
-            Add Training
-        </button>
+        <h1 class="text-center text-white"> Trainings </h1>
+        <div class="intro container">
+            <div class="col-md-1"></div>
+            <div class="col-md-8">
+                <div class="card text-center infoCard">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quisquam commodi optio dolor iusto culpa eius placeat nostrum. Quod perferendis libero amet saepe porro aliquam praesentium, iure quisquam. Amet, quod?</p>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <!-- Button trigger modal -->
+
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#trainingModal">
+                    Add Training
+                </button>
+            </div>
+            <div class="col-md-1"></div>
+            
+        </div>
+        
         <!-- Modal -->
         <div class="modal fade" id="trainingModal" tabindex="-1" aria-labelledby="trainingModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title text-center" id="trainingModalLabel"> Add Donations</h2>
+                        <h2 class="modal-title text-center" id="trainingModalLabel"> Add Trainings</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -39,9 +54,9 @@
                                 placeholder="Category">
                         </div>
                         <div class="mb-3">
-                            <label for="trainingFormControlInput1" class="form-label fs-4">Donation Date</label>
+                            <label for="trainingFormControlInput1" class="form-label fs-4">Training Date</label>
                             <input type="date" class="form-control" [(ngModel)]="selectedTraining.eventdate" id="trainingFormControlInput1"
-                                placeholder="Donation Date">
+                                placeholder="Training Date">
                         </div>
                         <div class="mb-3">
                             <label for="trainingFormControlInput1" class="form-label fs-4">Time</label>

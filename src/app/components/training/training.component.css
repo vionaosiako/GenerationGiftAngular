@@ -4,3 +4,20 @@
 .trainingImage{
     height: 230px;
 }
+.intro{
+    display: flex;
+}
+.infoCard{
+    background-color: #addfcf;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-style: groove;
+    border: 10px;
+    border: 100px;
+}
+
+button{
+    padding: 20px;
+    background-color: #881D05;
+    color: #ffffff;
+}

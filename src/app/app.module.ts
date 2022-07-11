@@ -12,6 +12,9 @@ import { EmploymentComponent } from './components/employment/employment.componen
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { LoginComponent } from './components/login/login.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import { BannerComponent } from './components/banner/banner.component';
     AboutusComponent,
     NavbarComponent,
     BannerComponent,
+    RegistrationComponent,
+    LoginComponent,
+    FooterComponent,
 
 
   ],
