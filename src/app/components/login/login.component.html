@@ -17,6 +17,32 @@
                     <label for="exampleInputEmail1" class="form-label text-primary" id="register">Not a member yet? Register now.</label>
                 </div>
             </form>
+
+            ......
+            <form>
+                <div class="form-group">
+                    <div class="row">
+                        <label>Username:</label><br />
+                        <input [(ngModel)]="login.username" class="form-control"[ngModelOptions]="{standalone: true}">
+                        <span *ngFor="let error of _userService.errors.username"><br />
+                            {{ error }}</span>
+                        <input [(ngModel)]="login.password" type='password'   class="form-control" placeholder="Enter your password" [ngModelOptions]="{standalone: true}">
+                        <span *ngFor="let error of _userService.errors.password"><br />
+                            {{ error }}</span>
+                        <button (click) ="loginUser()">Login</button>
+                    </div>
+                    <div class="col-sm-12">
+                        <span *ngFor="let error of _userService.errors.non_field_errors">{{ error }}<br /></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">You are logged in as {{ _userService.username }}.<br />
+                        Token Expires: {{ _userService.token_expires }}<br />
+                        <button (click)="refreshToken()" class="btn btn-primary">Refresh Token</button>
+                        <button (click)="logout()" class="btn btn-primary">Log Out</button>
+                    </div>
+                </div>
+                </form>
         </div>
         <div class="col-md-3"></div>
     </div>

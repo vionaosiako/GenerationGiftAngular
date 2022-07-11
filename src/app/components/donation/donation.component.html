@@ -2,40 +2,40 @@
     <div class="container-fluid">
         <h2> Donations</h2>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#donationModal">
             Donate Now
         </button>
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title text-center" id="exampleModalLabel"> Add Donations</h2>
+                        <h2 class="modal-title text-center" id="donationModalLabel"> Add Donations</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label fs-4">Donor Name</label>
-                            <input type="text" [(ngModel)]="selectedDonation.donorname" class="form-control" id="exampleFormControlInput1"
+                            <label for="donationFormControlInput1" class="form-label fs-4">Donor Name</label>
+                            <input type="text" [(ngModel)]="selectedDonation.donorname" class="form-control" id="donationFormControlInput1"
                                 placeholder="Donor Name">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label fs-4">Items</label>
-                            <textarea class="form-control" [(ngModel)]="selectedDonation.items" id="exampleFormControlTextarea1" rows="3"
+                            <label for="donationFormControlInput1" class="form-label fs-4">Items</label>
+                            <textarea class="form-control" [(ngModel)]="selectedDonation.items" id="donationFormControlTextarea1" rows="3"
                                 placeholder="Items"></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label fs-4">Location</label>
-                            <input type="text" class="form-control" [(ngModel)]="selectedDonation.location" id="exampleFormControlInput1"
+                            <label for="donationFormControlInput1" class="form-label fs-4">Location</label>
+                            <input type="text" class="form-control" [(ngModel)]="selectedDonation.location" id="donationFormControlInput1"
                                 placeholder="Location">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label fs-4">Time</label>
-                            <input type="time" class="form-control" [(ngModel)]="selectedDonation.time" id="exampleFormControlInput1" placeholder="Time">
+                            <label for="donationFormControlInput1" class="form-label fs-4">Time</label>
+                            <input type="time" class="form-control" [(ngModel)]="selectedDonation.time" id="donationFormControlInput1" placeholder="Time">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label fs-4">Donation Date</label>
-                            <input type="date" class="form-control" [(ngModel)]="selectedDonation.donationdate" id="exampleFormControlInput1"
+                            <label for="donationFormControlInput1" class="form-label fs-4">Donation Date</label>
+                            <input type="date" class="form-control" [(ngModel)]="selectedDonation.donationdate" id="donationFormControlInput1"
                                 placeholder="Donation Date">
                         </div>
                     </div>
