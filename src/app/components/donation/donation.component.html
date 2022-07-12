@@ -1,19 +1,20 @@
 <div id="donation">
     <div class="container-fluid">
-        <h1 class="text-center text-white">Donations</h1>
+        <h1 class="text-center text-white"> Donations </h1>
         <div class="intro container">
             <div class="col-md-1"></div>
-            <div class="col-md-8 infoCard text-center">
-                <p>"We make a living by what we get, We make a life by what we give"<br>-Winston Churchill <br>  We appreciate anything towards this course.</p>            <div class="col-md-1"></div>
+            <div class="col-md-8 card text-center infoCard">
+                <p>“Our deepest fear is not that we are inadequate, it is that we are powerful beyond measure.” <br> — Marianne Williamson <br>Offer/Get donations/Workshops geared towards personal Development skills</p>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-2">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#donatonModal">
-                    Donate Now
+
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#donationModal">
+                    Add donation
                 </button>
             </div>
-            
+            <div class="col-md-1"></div>
             
         </div>
         
@@ -22,37 +23,41 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title text-center" id="donationModalLabel"> Add Donations</h2>
+                        <h2 class="modal-title text-center" id="donationModalLabel"> Add donations</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="donationFormControlInput1" class="form-label fs-4">Donor Name</label>
-                            <input type="text" [(ngModel)]="selectedDonation.donorname" class="form-control" id="donationFormControlInput1"
-                                placeholder="Donor Name">
+                            <label for="donationFormControlInput1" class="form-label fs-4">Poster</label>
+                            <input type="file" [(ngModel)]="selectedDonation.poster" class="form-control" id="donationFormControlInput1">
                         </div>
                         <div class="mb-3">
-                            <label for="donationFormControlInput1" class="form-label fs-4">Items</label>
-                            <textarea class="form-control" [(ngModel)]="selectedDonation.items" id="donationFormControlTextarea1" rows="3"
-                                placeholder="Items"></textarea>
+                            <label for="donationFormControlInput1" class="form-label fs-4">Title</label>
+                            <input type="text" [(ngModel)]="selectedDonation.items" class="form-control" id="donationFormControlInput1"
+                                placeholder="Title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="donationFormControlInput1" class="form-label fs-4">Donorname</label>
+                            <input class="form-control" [(ngModel)]="selectedDonation.donorname" placeholder="Donorname" id="donationFormControlTextarea1" rows="3">
                         </div>
                         <div class="mb-3">
                             <label for="donationFormControlInput1" class="form-label fs-4">Location</label>
                             <input type="text" class="form-control" [(ngModel)]="selectedDonation.location" id="donationFormControlInput1"
                                 placeholder="Location">
                         </div>
+                        
+                        <div class="mb-3">
+                            <label for="donationFormControlInput1" class="form-label fs-4">Donation Date</label>
+                            <input type="date" class="form-control" [(ngModel)]="selectedDonation.donationdate" id="donationFormControlInput1"
+                                placeholder="donation Date">
+                        </div>
                         <div class="mb-3">
                             <label for="donationFormControlInput1" class="form-label fs-4">Time</label>
                             <input type="time" class="form-control" [(ngModel)]="selectedDonation.time" id="donationFormControlInput1" placeholder="Time">
                         </div>
-                        <div class="mb-3">
-                            <label for="donationFormControlInput1" class="form-label fs-4">Donation Date</label>
-                            <input type="date" class="form-control" [(ngModel)]="selectedDonation.donationdate" id="donationFormControlInput1"
-                                placeholder="Donation Date">
-                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" *ngIf="selectedDonation.id == -1" (click)="newDonation()"> POST </button>
+                        <button type="submit" class="btn btn-primary" *ngIf="selectedDonation.id == -1"(click)="newDonation()" > POST </button>
                         <button type="button" class="btn btn-primary" *ngIf="selectedDonation.id != -1" (click)="deleteDonation()"> DELETE </button>
                         <button type="button" class="btn btn-primary" *ngIf="selectedDonation.id != -1" (click)="putDonation()"> PUT </button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -69,7 +74,8 @@
                     <div class="card-body">
                         <ul>
                             <li>
-                                <p (click)="donationsClicked(donation)"> <strong>Items Donornated: </strong> {{donation.items}}</p>
+                                <img src="{{image_url+donation.poster}}" alt="" class="donationImage">
+                                <p (click)="donationsClicked(donation)"> <strong>Items donated: </strong> {{donation.items}}</p>
                                 <p><strong>Donor name: </strong> {{donation.donorname}}</p>
                                 <p><strong>Location: </strong> {{donation.location}}</p>
                                 <P><strong>Time: </strong>{{donation.time}}</P>

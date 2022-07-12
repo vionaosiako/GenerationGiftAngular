@@ -26,24 +26,21 @@ export class TrainingService {
     return this.http.put(this.baseurl + '/Training/' + training.id + '/', body,
     {headers: this.httpHeaders});
   }  
+  // createTraining(training:any): Observable<any> {
+  //   const body = {poster: training.poster, title: training.title, description: training.description, venue: training.venue, category: training.category, eventdate: training.eventdate, eventtime: training.eventtime};
+  //   return this.http.post(this.baseurl + '/Training/', body,{
+  //     // headers: {
+  //     //   contentType:'multipart/form-data'
+  //     // }
+  //   });
+  //   {headers: this.httpHeaders};
+  // }
+
   createTraining(training:any): Observable<any> {
     const body = {poster: training.poster, title: training.title, description: training.description, venue: training.venue, category: training.category, eventdate: training.eventdate, eventtime: training.eventtime};
-    return this.http.post(this.baseurl + '/Training/', body,{
-      // headers: {
-      //   contentType:'multipart/form-data'
-      // }
-    });
-    {headers: this.httpHeaders};
+    return this.http.post(this.baseurl + '/Training/', body,
+    {headers: this.httpHeaders});
   }
-
-  // createTraining(training:FormData):Observable<any>{
-  //   return this.http.post(this.baseurl + '/Training/',training, { headers:{
-  //       'Content-Type': 'multipart/form-data',
-  //     }
-  //   }
-    
-  //   )
-  // }
   deleteTraining(id:number): Observable<any> {
     return this.http.delete(this.baseurl + '/Training/' + id + '/',
     {headers: this.httpHeaders});

@@ -23,12 +23,12 @@ export class DonationService {
     {headers: this.httpHeaders});
   }
   updateDonation(donation:any): Observable<any> {
-    const body = {items:donation.items,donorname:donation.donorname,location:donation.location,time:donation.time,donationdate:donation.donationdate};
+    const body = {poster: donation.poster,items:donation.items,donorname:donation.donorname,location:donation.location,time:donation.time,donationdate:donation.donationdate};
     return this.http.put(this.baseurl + '/donations/' + donation.id + '/', body,
     {headers: this.httpHeaders});
   }  
   createDonation(donation:any): Observable<any> {
-    const body = {items:donation.items,donorname:donation.donorname,location:donation.location,time:donation.time,donationdate:donation.donationdate};
+    const body = {poster: donation.poster,items:donation.items,donorname:donation.donorname,location:donation.location,time:donation.time,donationdate:donation.donationdate};
     return this.http.post(this.baseurl + '/donations/', body,
     {headers: this.httpHeaders});
   }

@@ -9,11 +9,12 @@ import { DonationService } from 'src/app/services/donation.service';
 })
 export class DonationComponent implements OnInit {
   selectedDonation;
-  donations=[{id:1}, {items:'test'}, {donorname:'name'},{location:'location'},{time:'time'},{donationdate:'donationdate'},{user:'user'}];
+  donations=[{id:1},{poster:'poster'}, {items:'test'}, {donorname:'name'},{location:'location'},{time:'time'},{donationdate:'donationdate'},{user:'user'}];
 
+  image_url= "https://res.cloudinary.com/dhvcmzuzw/"
   constructor(private api:DonationService) {
     this.getDonations();
-    this.selectedDonation = {id:-1,items:'', donorname:'',location:'',time:'',donationdate:'',user:''};
+    this.selectedDonation = {id:-1,items:'',poster:'', donorname:'',location:'',time:'',donationdate:'',user:''};
   }
 
   ngOnInit(): void {

@@ -68,10 +68,21 @@ export class TrainingComponent implements OnInit {
       }
     );
   }
-  newTraining = (event:any) => {
-    event.preventDefault()
-    const formData = new FormData(event.target)
-    this.api.createTraining(formData).subscribe(
+  // newTraining = (event:any) => {
+  //   event.preventDefault()
+  //   const formData = new FormData(event.target)
+  //   this.api.createTraining(formData).subscribe(
+  //     data => {
+  //       this.trainings.push(data);
+  //     },
+  //     error => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }
+
+  newTraining = () => {
+    this.api.createTraining(this.selectedTraining).subscribe(
       data => {
         this.trainings.push(data);
       },

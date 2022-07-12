@@ -1,6 +1,7 @@
 #donation{
-    background-color: #05885E;
-    padding: 50px;
+    background-color: #057088;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .intro{
     display: flex;
@@ -16,3 +17,7 @@ button{
 .info{
     display: grid;
     }
+
+.donationImage{
+    height: 190px;
+}
