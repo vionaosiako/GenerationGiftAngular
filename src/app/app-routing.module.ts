@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'home', component: BannerComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'training', component: TrainingComponent },
-  { path: 'project-pitch', component: ProjectPitchComponent },
+  { path: 'pitch', component: ProjectPitchComponent },
   { path: 'donation', component: DonationComponent },
   { path: 'job', component: EmploymentComponent },
   { path: 'login', component: LoginComponent },
