@@ -1,3 +1,14 @@
 #job{
     background-color: #05885E;
+    padding: 50px;
+}
+.intro{
+    display: flex;
+}
+
+button{
+    padding: 20px;
+    background-color: #881D05;
+    color: #ffffff;
+    border-radius: 5px;
 }

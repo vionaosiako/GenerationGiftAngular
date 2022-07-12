@@ -10,6 +10,17 @@ import { TrainingService } from 'src/app/services/training.service';
 })
 
 export class TrainingComponent implements OnInit {
+
+  onSelectImage(evt:any){
+    const file=evt.target.files[0];    
+
+    const fileReader = new FileReader();
+    fileReader.onloadend = (fileReaderEvent) => {
+      this.selectedTraining.poster=fileReaderEvent.target!.result!.toString()
+    }
+    fileReader.readAsDataURL(file)
+  }
+
   image_url= "https://res.cloudinary.com/dhvcmzuzw/"
   selectedTraining;
   trainings=[{id:1}, {title:'test'}, {poster:'poster'},{description:'description'},{venue:'venue'},{category:'category'},{eventdate:'eventdate'},{eventtime:'eventtime'},{user:'user'}];
@@ -57,8 +68,10 @@ export class TrainingComponent implements OnInit {
       }
     );
   }
-  newTraining = () => {
-    this.api.createTraining(this.selectedTraining).subscribe(
+  newTraining = (event:any) => {
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    this.api.createTraining(formData).subscribe(
       data => {
         this.trainings.push(data);
       },

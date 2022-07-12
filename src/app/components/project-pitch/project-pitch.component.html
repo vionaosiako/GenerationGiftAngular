@@ -2,9 +2,9 @@
     <div class="container-fluid">
         <h1 class="text-center text-white"> Project Pitch</h1>
         <div class="intro container">
-            <div class="col-md-2"></div>
-            <div class="col-md-6">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quisquam commodi optio dolor iusto culpa eius placeat nostrum. Quod perferendis libero amet saepe porro aliquam praesentium, iure quisquam. Amet, quod?</p>
+            <div class="col-md-1"></div>
+            <div class="col-md-8 infoCard text-center">
+                <p>"Price is what you pay. Value is what you get."" <br> -Warren Buffet<br> You have an idea to improving lives, Hurry and Pitch it here to contribute towards better lives</p>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-2">
@@ -56,16 +56,15 @@
     <br><br>
     <div class="container-fluid">
         <div class="row" style="display: flex; justify-content: center;">
-            <div class="col-md-4" *ngFor="let pitch of projectPitches">
+            <div class="col-md-4 info mt-2" *ngFor="let pitch of projectPitches">
                 <div class="card bg-white">
                     <div class="card-body">
                         <ul>
                             <li>
-                                <p>Id: {{ pitch.id }}</p>
-                                <p (click)="PitchesClicked(pitch)">Title: {{ pitch.title }} </p>
-                                <p>Des: {{ pitch.description }}</p>
-                                <p>No: {{ pitch.mpesa_no }}</p>
-                                <p>Cost: {{ pitch.total_cost }}</p>
+                                <h3 (click)="PitchesClicked(pitch)" class="text-center">{{ pitch.title }} </h3>
+                                <p>{{ pitch.description }}</p>
+                                <p><strong>Project Cost: </strong> {{ pitch.total_cost }}</p>
+                                <p> <strong>contribution No: </strong> {{ pitch.mpesa_no }}</p>
                             </li>
                         </ul>
                     </div>

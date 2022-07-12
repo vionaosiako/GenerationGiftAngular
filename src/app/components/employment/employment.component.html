@@ -1,9 +1,22 @@
 <div id="job">
-    <div>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#jobModal">
-            Post Job
-        </button>
-        <!-- Modal -->
+    <div class="container-fluid">
+        <h1 class="text-center text-white">Employment</h1>
+        <div class="intro container">
+            <div class="col-md-1"></div>
+            <div class="col-md-8 infoCard text-center">
+                <p>“Keep away from people who try to belittle your ambitions. Small people always do that, but the really great ones make you feel that you too can become great.” <br> – Mark Twain <br>Post a Job, Improve a Life.</p>            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#jobModal">
+                    Post a Job
+                </button>
+            </div>
+            <div class="col-md-1"></div>
+            
+        </div><br><br>
+            <!-- Modal -->
+            <!-- Modal -->
         <div class="modal fade" id="jobModal" tabindex="-1" aria-labelledby="jobModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -22,9 +35,16 @@
                             <textarea class="form-control" [(ngModel)]="selectedJob.description" rows="3"></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="jobFormControlInput1" class="form-label fs-4"><i
-                                class="baseline-date_range">Category</i></label>
-                            <input type="text" class="form-control" [(ngModel)]="selectedJob.category" placeholder="category">
+                            <label for="jobFormControlInput1" class="form-label fs-4">Category</label>
+                                <div class="input-group mb-3">
+                                <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected>Choose...</option>
+                                    <option value="Blue Collar Job">Blue Collar Job</option>
+                                    <option value="White Collar Job">White Collar Job</option>
+                                </select>
+                                </div>
+                            <!-- <input type="text" class="form-control" [(ngModel)]="selectedJob.category" placeholder="category"> -->
                         </div>
                         <div class="mb-3">
                             <label for="jobFormControlInput1" class="form-label fs-4">Location</label>
@@ -49,30 +69,29 @@
             </div>
         </div>
     </div>
-    
-    <div class="container-fluid">
-        <div class="row" style="display: flex; justify-content: center;">
-            <div class="col-md-4" *ngFor="let job of jobs">
-                <div class="card bg-white">
-                    <div class="card-body">
-                        <ul>
-                            <li>
-                                <p>Id: {{job.id}}</p>
-                                <p (click)="jobClicked(job)">job_title: {{job.job_title}}</p>
-                                <p>Description: {{job.description}}</p>
-                                <p>date_posted: {{job.date_posted}}</p>
-                                <P>Category: {{job.category}}</P>
-                                <P>location: {{job.location}}</P>
-                                <p>approximate_salary: {{job.approximate_salary}}</p>
-                                <P>deadline: {{job.deadline}}</P>
-                                <P>user: {{job.user}}</P>
-                            </li>
-                        </ul>
+
+        
+        <div class="container-fluid">
+            <div class="row" style="display: flex; justify-content: center;">
+                <div class="col-md-4 info mt-2" *ngFor="let job of jobs">
+                    <div class="card bg-white">
+                        <div class="card-body">
+                            <ul>
+                                <li>
+                                    <h3 (click)="jobClicked(job)" class="text-center">{{job.job_title}}</h3>
+                                    <p>{{job.description}}</p>
+                                    <P><strong>Category: </strong> {{job.category}}</P>
+                                    <P><strong>Location: </strong> {{job.location}}</P>
+                                    <p><strong>Approximate_salary:</strong> {{job.approximate_salary}}</p>
+                                    <p><strong>Date_posted:</strong> {{job.date_posted}}</p>
+                                    <P><strong>Deadline:</strong> {{job.deadline}}</P>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>
 
 

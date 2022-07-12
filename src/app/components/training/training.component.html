@@ -3,10 +3,8 @@
         <h1 class="text-center text-white"> Trainings </h1>
         <div class="intro container">
             <div class="col-md-1"></div>
-            <div class="col-md-8">
-                <div class="card text-center infoCard">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quisquam commodi optio dolor iusto culpa eius placeat nostrum. Quod perferendis libero amet saepe porro aliquam praesentium, iure quisquam. Amet, quod?</p>
-                </div>
+            <div class="col-md-8 card text-center infoCard">
+                <p>“Our deepest fear is not that we are inadequate, it is that we are powerful beyond measure.” <br> — Marianne Williamson <br>Offer/Get Trainings/Workshops geared towards personal Development skills</p>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-2">
@@ -39,9 +37,8 @@
                                 placeholder="Title">
                         </div>
                         <div class="mb-3">
-                            <label for="trainingFormControlInput1" class="form-label fs-4">description</label>
-                            <input class="form-control" [(ngModel)]="selectedTraining.description" id="trainingFormControlTextarea1" rows="3"
-                                placeholder="description">
+                            <label for="trainingFormControlInput1" class="form-label fs-4">Description</label>
+                            <textarea class="form-control" [(ngModel)]="selectedTraining.description" placeholder="description" id="trainingFormControlTextarea1" rows="3"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="trainingFormControlInput1" class="form-label fs-4">Location</label>
@@ -50,8 +47,19 @@
                         </div>
                         <div class="mb-3">
                             <label for="trainingFormControlInput1" class="form-label fs-4">Category</label>
-                            <input type="text" class="form-control" [(ngModel)]="selectedTraining.category" id="trainingFormControlInput1"
-                                placeholder="Category">
+                            <div class="input-group mb-3" >
+                                <label class="input-group-text"  for="inputGroupSelect01">Options</label>
+                                <select class="form-select" [(ngModel)]="selectedTraining.category" id="inputGroupSelect01">
+                                    <option selected>Choose...</option>
+                                    <option value="IT">IT</option>
+                                    <option value="Sales">Sales</option>
+                                    <option value="Life Skills">Life Skills</option>
+                                    <option value="Technical Skills">Technical Skills</option>
+                                    <option value="Digital Literacy">Digital Literacy</option>
+                                </select>
+                            </div>
+                            <!-- <input type="text" class="form-control" [(ngModel)]="selectedTraining.category" id="trainingFormControlInput1"
+                                placeholder="Category"> -->
                         </div>
                         <div class="mb-3">
                             <label for="trainingFormControlInput1" class="form-label fs-4">Training Date</label>
@@ -62,10 +70,9 @@
                             <label for="trainingFormControlInput1" class="form-label fs-4">Time</label>
                             <input type="time" class="form-control" [(ngModel)]="selectedTraining.eventtime" id="trainingFormControlInput1" placeholder="Time">
                         </div>
-                        
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" *ngIf="selectedTraining.id == -1" (click)="newTraining()"> POST </button>
+                        <button type="submit" class="btn btn-primary" *ngIf="selectedTraining.id == -1" > POST </button>
                         <button type="button" class="btn btn-primary" *ngIf="selectedTraining.id != -1" (click)="deleteTraining()"> DELETE </button>
                         <button type="button" class="btn btn-primary" *ngIf="selectedTraining.id != -1" (click)="putTraining()"> PUT </button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -77,17 +84,18 @@
     <br><br>
     <div class="container-fluid">
         <div class="row" style="display: flex; justify-content: center;">
-            <div class="col-md-4" *ngFor="let training of trainings">
+            <div class="col-md-4 info mt-3" *ngFor="let training of trainings">
                 <div class="card bg-white">
                     <div class="card-body">
                         <ul>
                             <li>
                                 <img src="{{image_url+training.poster}}" alt="image" class="trainingImage">
-                                <p (click)="trainingClicked(training)">Title: {{training.title}}</p>
-                                <p>Description: {{training.description}}</p>
-                                <p>Venue: {{training.venue}}</p>
-                                <P>Category: {{training.category}}</P>
-                                <P>Event date: {{training.eventdate}}</P>
+                                <h3 (click)="trainingClicked(training)" class="mt-4">{{training.title}}</h3>
+                                <p>{{training.description}}</p>
+                                <p><strong>Venue: </strong> {{training.venue}}</p>
+                                <P><strong>Category: </strong>{{training.category}}</P>
+                                <P><strong>Event date: </strong>{{training.eventdate}}</P>
+                                <p><strong>Event time: </strong>{{training.eventtime}}</p>
                             </li>
                         </ul>
                     </div>
