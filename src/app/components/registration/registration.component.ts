@@ -10,23 +10,24 @@ import { Router } from '@angular/router';
 })
 export class RegistrationComponent implements OnInit {
   register: any;
+  error_username:any
+  error_email:any
+  error_password1:any
+  invalid:any
   constructor(public router:Router, public userService:UserService) { }
   ngOnInit() {
     this.register = {
       username: '',
       email:'',
-      password1: '',
-      password2: '',
+      password: '',
     };
   }
-  registerUser() {
+  registerUser(){
     this.userService.registerUsers(this.register).subscribe(
-      response => {
-        alert('Login successful!')
+      response=> {
+        alert('User has been registered successfully!')
       },
-      error =>{
-        alert('Error!')
-      }
+      error=> console.log (error)
     );
   }
 }

@@ -1,50 +1,34 @@
-<div class="container-fluid" >
-    <div class="row" id="login" style="background-image: url(../../../assets/image/kids_11zon.jpeg); align-items: center;" >
-        <div class="col-md-3"></div>
-        <div class="col-md-6" id="user">
-            <div class="title">
-                <h3>Login</h3>
-            </div>
-            <form >
-                <div class="mb-3">
-                    <input type="username" class="form-control" id="user" placeholder="Username">
+<div id="login">
+    <div class="container-fluid" >
+        <div class="row" id="login" style="background-image: url(../../../assets/image/kids_11zon.jpeg); align-items: center;" >
+            <div class="col-md-3"></div>
+            <div class="col-md-6" id="user">
+                <div class="title">
+                    <h3>Login</h3>
                 </div>
-                <div class="mb-3">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-primary" id="button">Log In</button>
-                <div>
-                    <label for="exampleInputEmail1" class="form-label text-primary" id="register">Not a member yet? Register now.</label>
-                </div>
-            </form>
-
-            ......
-            <form>
                 <div class="form-group">
                     <div class="row">
-                        
-                        <label>Username:</label><br />
-                        <input [(ngModel)]="login.username" class="form-control"[ngModelOptions]="{standalone: true}">
-                        <span *ngFor="let error of _userService.errors.username"><br />
-                            {{ error }}</span>
-                        <input [(ngModel)]="login.password" type='password'   class="form-control" placeholder="Enter your password" [ngModelOptions]="{standalone: true}">
-                        <span *ngFor="let error of _userService.errors.password"><br />
-                            {{ error }}</span>
-                        <button (click) ="loginUser()">Login</button>
-                    </div>
-                    <div class="col-sm-12">
-                        <span *ngFor="let error of _userService.errors.non_field_errors">{{ error }}<br /></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">You are logged in as {{ _userService.username }}.<br />
-                        Token Expires: {{ _userService.token_expires }}<br />
-                        <button (click)="refreshToken()" class="btn btn-primary">Refresh Token</button>
-                        <button (click)="logout()" class="btn btn-primary">Log Out</button>
+                        <div class="mb-3">
+                            <input [(ngModel)]="login.username" class="form-control"[ngModelOptions]="{standalone: true}" placeholder="Enter your username">
+                            <span *ngFor="let error of _userService.errors.username"><br />{{ error }}</span>
+                        </div>
+                        <div class="mb-3">
+                            <input [(ngModel)]="login.password" type='password'   class="form-control" placeholder="Enter your password" [ngModelOptions]="{standalone: true}">
+                            <span *ngFor="let error of _userService.errors.password"><br />{{ error }}</span>
+                        </div>
+                        <div class="mb-3">
+                            <button (click) ="loginUser()" class="btn btn-primary">Login</button>
+                        </div>
+                        <div class="mb-3">
+                            <div class="col-sm-12">
+                                <span *ngFor="let error of _userService.errors.non_field_errors">{{ error }}<br /></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </form>
+            </div>
+            <div class="col-md-3"></div>
         </div>
-        <div class="col-md-3"></div>
     </div>
+    
 </div>

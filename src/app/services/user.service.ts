@@ -21,8 +21,8 @@ export class UserService {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     };
   }
-  registerUsers(users:any): Observable<any> {
-    return this.http.post(this.baseurl+'/users/',users)
+  registerUsers(userData:any): Observable<any> {
+    return this.http.post('https://generationgift.herokuapp.com/auth/api/users/',userData)
   }
   // Uses http.post() to get an auth token from djangorestframework-jwt endpoint
   loginUsers(userData:any):Observable<any>{

@@ -9,15 +9,15 @@
                 <input type="email" class="form-control" [(ngModel)]="register.email" name="email" placeholder="Email" required="required">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" [(ngModel)]="register.password1" name="password" placeholder="Password" required="required">
+                <input type="password" class="form-control" [(ngModel)]="register.password" name="password" placeholder="Password" required="required">
             </div>
             <div class="form-group">
                 <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Create Account</button>
+                <input type="submit" class="btn  btn-primary login-btn btn-sm mt-3" (click)="registerUser()" value="Create account">
             </div>
         </form>
-        <div class="text-center ">Already Registered? <a href="#">Login</a></div>
+        <div class="text-center text-dark">Already Registered? <a href="#" routerLink="login" >Login</a></div>
     </div>
 </div>

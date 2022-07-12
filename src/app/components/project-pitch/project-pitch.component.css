@@ -1,6 +1,9 @@
 #pitch{
     background-color: #05885E;
-    padding: 50px;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    padding-right: 50px;
 }
 .intro{
     display: flex;
@@ -11,4 +14,16 @@ button{
     background-color: #881D05;
     color: #ffffff;
     border-radius: 5px;
+}
+
+h1 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #ffffff; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+} 
+
+h1 span { 
+    background:#05885E;
 }
