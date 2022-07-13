@@ -11,13 +11,13 @@ import { RegistrationComponent } from './components/registration/registration.co
 
 
 const routes: Routes = [
-  { path: '', component:BannerComponent},
+  { path: 'home', component:BannerComponent},
   { path: 'aboutus', component: AboutusComponent },
   { path: 'training', component: TrainingComponent },
   { path: 'pitch', component: ProjectPitchComponent },
   { path: 'donation', component: DonationComponent },
   { path: 'job', component: EmploymentComponent },
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   { path: 'registration', component:RegistrationComponent},
 
 
