@@ -11,7 +11,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 
 
 const routes: Routes = [
-  { path: 'home', component: BannerComponent },
+  { path: '', component:BannerComponent},
   { path: 'aboutus', component: AboutusComponent },
   { path: 'training', component: TrainingComponent },
   { path: 'pitch', component: ProjectPitchComponent },
