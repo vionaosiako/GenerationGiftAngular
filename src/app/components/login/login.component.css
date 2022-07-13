@@ -1,5 +1,14 @@
 #login{
     background-image: url(../../../assets/image/kids_11zon.jpeg);
-    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.regLink{
+    color: black;
+}
+.SignUp{
+    background-color: #881D05;
+    color: aliceblue;
 }
 

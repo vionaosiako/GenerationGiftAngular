@@ -17,14 +17,14 @@
                             <span *ngFor="let error of _userService.errors.password"><br />{{ error }}</span>
                         </div>
                         <div class="mb-3">
-                            <button (click) ="loginUser()" class="btn btn-primary">Login</button>
+                            <button (click) ="loginUser()" class="btn SignUp">Login</button>
                         </div>
                         <div class="mb-3">
                             <div class="col-sm-12">
                                 <span *ngFor="let error of _userService.errors.non_field_errors">{{ error }}<br /></span>
                             </div>
                         </div>
-                        <div class="text-center text-light">Don't Have an account? <a [routerLink]="['/register']">Login</a></div>
+                        <div class="text-center text-info regLink"><h3>Don't Have an account? </h3><a [routerLink]="['/registration']" class="btn SignUp">SignUp</a></div>
 
                     </div>
                 </div>

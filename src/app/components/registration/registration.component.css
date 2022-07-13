@@ -1,7 +1,8 @@
 #reg{
     background-image: url(../../../assets/image/employed.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     background-repeat: no-repeat;
 }
@@ -79,4 +80,8 @@
 }
 .signup-form form a:hover {
     text-decoration: underline;
+}
+.SignUp{
+    background-color: #881D05;
+    color: aliceblue;
 }
