@@ -14,7 +14,7 @@ export class RegistrationComponent implements OnInit {
   error_email:any
   error_password1:any
   invalid:any
-  constructor(public router:Router, public userService:UserService) { }
+  constructor(private router:Router, private userService:UserService) { }
   ngOnInit() {
     this.register = {
       username: '',
@@ -26,6 +26,7 @@ export class RegistrationComponent implements OnInit {
     this.userService.registerUsers(this.register).subscribe(
       response=> {
         alert('User has been registered successfully!')
+        this.router.navigate(['/login']);
       },
       error=> console.log (error)
     );
