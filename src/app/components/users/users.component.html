@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div id="users">
+    <div class="container-fluid" style="background-color: #057088;">
+        <div class="container">
+            <div class="row">
+                <div class="col md-12">
+                    <br>    
+                    <div class="jumbotron p-5 mt-5"> 
+                        <div class="text-center">
+                            <h2>Members <b>Data </b></h2> 
+                        </div>
+                        <table class="table table-hover table-dark">    
+                            <tr>
+                                <th>Full name</th>
+                                <th>Phone number</th>
+                                <!-- <th>Email</th> -->
+                                <th>Location</th>
+                                <th>Bio</th><br>
+                            </tr>    
+                            <tr *ngFor="let row of userProfile">
+                                <td>{{row.name}}</td>
+                                <td>{{row.contact}}</td>
+                                <!-- <td>{{row.email}}</td> -->
+                                <td>{{row.location}}</td>
+                                <td>{{row.bio}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

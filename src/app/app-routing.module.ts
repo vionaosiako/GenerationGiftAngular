@@ -8,6 +8,7 @@ import { DonationComponent } from './components/donation/donation.component';
 import { EmploymentComponent } from './components/employment/employment.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { UsersComponent } from './components/users/users.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'job', component: EmploymentComponent },
   { path: '', component: LoginComponent },
   { path: 'registration', component:RegistrationComponent},
+  { path: 'users', component: UsersComponent },
 
 
 ];

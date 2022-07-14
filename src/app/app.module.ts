@@ -15,6 +15,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { UsersComponent } from './components/users/users.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { FooterComponent } from './components/footer/footer.component';
     RegistrationComponent,
     LoginComponent,
     FooterComponent,
+    UsersComponent,
 
 
   ],
