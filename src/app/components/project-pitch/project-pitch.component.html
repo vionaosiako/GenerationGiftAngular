@@ -47,9 +47,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" *ngIf="selectedPitch.id == -1" (click)="newPitch()"> POST </button>
+                        <button type="button" class="btn btn-primary" *ngIf="selectedPitch.id == -1" (click)="newPitch()"> Add Pitch </button>
+                        <button type="button" class="btn btn-primary" *ngIf="selectedPitch.id != -1" (click)="putPitch()"> Edit </button>
                         <button type="button" class="btn btn-primary" *ngIf="selectedPitch.id != -1" (click)="deletePitch()"> DELETE </button>
-                        <button type="button" class="btn btn-primary" *ngIf="selectedPitch.id != -1" (click)="putPitch()"> PUT </button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>

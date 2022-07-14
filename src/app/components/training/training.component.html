@@ -89,9 +89,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" *ngIf="selectedTraining.id == -1" (click)="newTraining()"> POST </button>
+                        <button type="button" class="btn btn-primary" *ngIf="selectedTraining.id == -1" (click)="newTraining()"> Add Training </button>
+                        <button type="button" class="btn btn-primary" *ngIf="selectedTraining.id != -1" (click)="putTraining()"> Edit </button>
                         <button type="button" class="btn btn-primary" *ngIf="selectedTraining.id != -1" (click)="deleteTraining()"> DELETE </button>
-                        <button type="button" class="btn btn-primary" *ngIf="selectedTraining.id != -1" (click)="putTraining()"> PUT </button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
