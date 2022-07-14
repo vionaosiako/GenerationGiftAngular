@@ -32,7 +32,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 * CSS
 * Bootstrap
 # Known Bugs
-No known bugs
++ Unable to load images from the frontend site.
 ## License
 [MIT]
 Authors Contact Information
